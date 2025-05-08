@@ -2,8 +2,11 @@
 import os
 import glob
 import json
+from time import timezone
 import pandas as pd
 from datetime import datetime
+
+from pandas.core.reshape import encoding
 
 
 def load_latest_raw():
@@ -33,10 +36,9 @@ def json_to_df(data):
 def save_processed(df):
     """ Сохранить DataFrame в data_processed/weather_current.csv"""
     os.makedirs("data_processed", exist_ok=True)
-    out_path = "data_processed/weather_current.csv"
-    df.to_csv(out_path, index=False, float_format="%.2f")
-    print(f"Processed data saved to {out_path}")
-
+    hist_path = "data_processed/weather_history.csv"
+    header = not os.path.exists(hist_path)
+    df.to_csv(hist_path, mode="a", header=header, index=False, float_format="%.2f", encoding="utf-8-sig")
 
 if __name__ == "__main__":
     raw = load_latest_raw()
