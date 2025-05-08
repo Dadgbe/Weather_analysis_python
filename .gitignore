@@ -1,6 +1,7 @@
-.vs/
-venv/
+# .gitignore
+.env
 __pycache__/
 *.pyc
-.DS_Store
+*.ipynb
 data_raw/
+data_processed/
