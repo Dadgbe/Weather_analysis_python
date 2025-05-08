@@ -89,3 +89,8 @@ python notebooks/analysis_script.py
 	- pandas == 2.0.3 - обработка данных
 	- matplotlib == 3.7.2 - визуализация
 	- python-dotenv == 1.0.0 - управление переменными окружения
+
+ 
+ ## Пример отображения графика  
+ ![temperature_plot](https://github.com/user-attachments/assets/c055b9c2-9cba-4dd4-b524-40bb90950277)
+
